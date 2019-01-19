@@ -5,20 +5,32 @@
 	<title>PROJECT #2 - Pokemon Quiz</title>
 
 	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Press+Start+2P" rel="stylesheet">
 </head>
 	<body>
 		<main>
-			<div class="wrapper">
-				<section>
+			<header>
+				<div class="header-left">
+					<p>TIMER?</p>
+				</div>
+				<div class="header-centre">
+					<h1>Gotta Catch 'Em All</h1>
 					<form name="pokeSubmit" id="pokeSubmit">
-						<input type="text" name="userGuess">
-						<input type="submit" name="userSubmit">
+						<input type="text" name="userGuess" id="userGuess">
+						<input type="image" name="userSubmit" id="userSubmit" src="pokeball.png"/>
 					</form>
-				</section>
-				<section class="pokemon-gallery">
-					
-				</section>
-			</div>
+					</div>
+				<div class="header-right counter">
+					<p><span class="totalGuessed">0</span> / 150</p>
+				</div>
+			</header>
+			<section class="gallery">
+				<div class="wrapper">
+					<div class="pokemon-gallery">
+						
+					</div>
+				</div>
+			</section>
 		</main>
 
 

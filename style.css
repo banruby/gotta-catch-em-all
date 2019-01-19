@@ -7,6 +7,72 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 
+/* <---- BODY ----> */
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+
+/* <---- FORM ----> */
+
+header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.header-centre {
+	width: 50%;
+}
+
+.header-left, .header-right {
+	width: 25%;
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Press Start 2P', cursive;
+	margin: 25px;
+}
+
+.counter p {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 20px;
+}
+
+form {
+	text-align: center;
+	height: 85px;
+	width: 400px;
+	position: relative;
+	margin: 15px auto;
+	background: red;
+	border: 5px solid red;
+}
+
+#userGuess {
+	width: 300px;
+	height: 75px;
+	padding: 0 15px;
+	font-family: 'Lato', sans-serif;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+}
+
+#userSubmit {
+	height: 75px;
+	text-align: center;
+	background-color: white;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
 .wrapper {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -17,17 +83,45 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 	flex-wrap: wrap;
 }
 
+/* <---- POKEMON CARDS ----> */
+
 .pokemon-container {
-	width: 280px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+	width: calc(20% - 16px);
 	border: solid 1px black;
-	overflow: hidden;
-	margin: 10px;
+	margin: 8px;
 }
 
 .pokemon-container img {
-	width: 280px;
+	width: 100%;
 }
+
+.pokeName, .pokeNumber {
+	text-transform: uppercase;
+	height: 100%;
+	margin: 0;
+	padding: 10px;
+	text-align: center;
+}
+
+.pokeName {
+	width: 75%;
+	float: left;
+}
+
+.pokeNumber {
+	width: 25%;
+	float: left;
+	border-right: 1px solid black;
+}
+
+.pokeTextContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-top: 1px solid black;
+}
+
+
+
+
+
