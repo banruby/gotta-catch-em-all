@@ -13,33 +13,138 @@ body {
 	font-family: 'Lato', sans-serif;
 }
 
+a {
+	text-decoration: none;
+}
+
+
+/* <---- OVERLAY ----> */
+
+.overlay-top {
+	position: absolute;
+	top:0;
+	bottom: 50vh;
+	right: 0;
+	left: 0;
+	background-color: red;
+	z-index: 10;
+	border-bottom: 5px solid black;
+}
+
+.overlay-bottom {
+	position: absolute;
+	top:50vh;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-color: white;
+	z-index: 5;
+	border-top: 5px solid black;
+}
+
+.pokeball-centre {
+	width: 300px;
+	height: 300px;
+	margin: 0 auto;
+	position: absolute;
+	right: calc(50vw - 150px);
+	top: calc(50vh - 150px);
+	z-index: 20;
+}
+
+.overlay-top h1 {
+	padding-top: 75px;
+	font-size: 60px;
+}
+
+ul.choose {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border: black 10px solid;
+	border-radius: 50%;
+	background-color: white;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.choose li {
+	width: 140px;
+	height: 140px;
+	display: inline;
+	text-align: center;
+}
+
+.choose li:hover {
+	cursor: crosshair;
+}
+
+li img {
+	width: 120px;
+	text-align: center;
+	margin: 20px;
+	overflow: hidden;
+	position: relative;
+}
+
+.bulbasaur img {
+	margin-right: 0;
+	margin-bottom: 0;
+	top: 10px;
+	left: 10px;
+}
+
+.charmander img {
+	margin-left: 0;
+	margin-bottom: 0;
+	top: 10px;
+	right: 10px;
+}
+
+.squirtle img {
+	margin-top: 0;
+	margin-right: 0;
+	bottom: 10px;
+	left: 10px;
+}
+
+.pikachu img {
+	margin-top:0;
+	margin-left:0;
+	bottom: 10px;
+	right: 10px;
+}
+
+h3 {
+	padding-top: 220px;
+}
+
 
 /* <---- FORM ----> */
 
 header {
+	padding-bottom: 25px;
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
+	flex-direction: column;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
 }
 
-.header-centre {
-	width: 50%;
+header h1 {
+	margin-top: 40px;
 }
 
-.header-left, .header-right {
-	width: 25%;
-	text-align: center;
-}
-
-h1 {
+h1,h2,h3 {
 	text-align: center;
 	font-family: 'Press Start 2P', cursive;
-	margin: 25px;
-}
-
-.counter p {
-	font-family: 'Press Start 2P', cursive;
-	font-size: 20px;
+	margin: 20px;
 }
 
 form {
@@ -48,8 +153,6 @@ form {
 	width: 400px;
 	position: relative;
 	margin: 15px auto;
-	background: red;
-	border: 5px solid red;
 }
 
 #userGuess {
@@ -81,13 +184,16 @@ form {
 .pokemon-gallery {
 	display: flex;
 	flex-wrap: wrap;
+	padding-top: 246px;
+	padding-bottom: 104px;
 }
 
 /* <---- POKEMON CARDS ----> */
 
 .pokemon-container {
 	width: calc(20% - 16px);
-	border: solid 1px black;
+	border: solid 2px #08398b;
+	background-color: white;
 	margin: 8px;
 }
 
@@ -101,6 +207,7 @@ form {
 	margin: 0;
 	padding: 10px;
 	text-align: center;
+	background-color: #cdcdd5;
 }
 
 .pokeName {
@@ -111,16 +218,120 @@ form {
 .pokeNumber {
 	width: 25%;
 	float: left;
-	border-right: 1px solid black;
+	border-right: solid 2px #08398b;
 }
 
 .pokeTextContainer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border-top: 1px solid black;
+	border-top: solid 2px #08398b;
+	font-weight: bold;
 }
 
+footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	font-size: 30px;
+	font-family: 'Press Start 2P', cursive;
+}
+
+footer p {
+	width: calc(100% / 3);
+	text-align: center;
+}
+
+p.credit {
+	font-size: 8px;
+}
+
+
+
+
+/* <---- CHARMANDER STYLING ----> */
+
+
+.charmander-1 {
+	background-color: #ff9441;
+}
+
+.charmander-2 {
+	background-color: #de5239;
+}
+
+.charmander-3 {
+	color: #8b2900;
+}
+
+.charmander-4 {
+	background-color: #ffd57b;
+	border: solid 5px #ffd57b;
+}
+
+
+/* <---- SQUIRTLE STYLING ----> */
+
+.squirtle-1 {
+	background-color: #5a9ca4;
+}
+
+.squirtle-2 {
+	background-color: #8bc5cd;
+}
+
+.squirtle-3 {
+	color: #cd7b29;
+}
+
+.squirtle-4 {
+	background-color: #297383;
+	border: 5px solid #297383;
+}
+
+
+/* <---- BULBASAUR STYLING ----> */
+
+.bulbasaur-1 {
+	background-color: #73ac31;
+}
+
+.bulbasaur-2 {
+	background-color: #bdff73;
+}
+
+.bulbasaur-3 {
+	color: #184a4a;
+}
+
+.bulbasaur-4 {
+	background-color: #ac0031;
+	border: 5px solid #ac0031;
+}
+
+
+/* <---- PIKACHU STYLING ----> */
+
+.pikachu-1 {
+	background-color: #f6e652;
+}
+
+.pikachu-2 {
+	background-color: #f6bd20;
+}
+
+.pikachu-3 {
+	color: #9c5200;
+}
+
+.pikachu-4 {
+	background-color: #de9400;
+	border: 5px solid #de9400;
+}
 
 
 

@@ -2,27 +2,43 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PROJECT #2 - Pokemon Quiz</title>
 
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato|Press+Start+2P" rel="stylesheet">
 </head>
 	<body>
-		<main>
-			<header>
-				<div class="header-left">
-					<p>TIMER?</p>
-				</div>
-				<div class="header-centre">
-					<h1>Gotta Catch 'Em All</h1>
-					<form name="pokeSubmit" id="pokeSubmit">
-						<input type="text" name="userGuess" id="userGuess">
-						<input type="image" name="userSubmit" id="userSubmit" src="pokeball.png"/>
-					</form>
-					</div>
-				<div class="header-right counter">
-					<p><span class="totalGuessed">0</span> / 150</p>
-				</div>
+		<section class="overlay-top">
+			<h1>Gotta Catch 'Em All</h1>
+			
+		</section>
+		<div class="pokeball-centre">
+			<ul class="choose">
+				<li class="bulbasaur">
+					<img src="assets/bulbasaur.png" alt="Bulbasaur">
+				</li>					
+				<li class="charmander">
+					<img src="assets/charmander.png" alt="Charmander">
+				</li>
+				<li class="squirtle">
+					<img src="assets/squirtle.png" alt="Squirtle">
+				</li>
+				<li class="pikachu">					<img src="assets/pikachu.png" alt="Pikachu">
+				</li>
+			</ul>
+		</div>
+		<section class="overlay-bottom">
+			<h3>Choose Your Companion</h3>
+		</section>
+		<main class="">
+			<header class="">
+				<h1>Gotta Catch 'Em All</h1>
+				<form name="pokeSubmit" id="pokeSubmit">
+					<input type="text" name="userGuess" id="userGuess">
+					<input type="image" name="userSubmit" id="userSubmit" src="assets/pokeball.png"/>
+				</form>					
 			</header>
 			<section class="gallery">
 				<div class="wrapper">
@@ -31,6 +47,11 @@
 					</div>
 				</div>
 			</section>
+			<footer>
+				<p class="credit">Colours - <a href="">Pokemon Palletes</a></p>
+				<p><span class="totalGuessed">0</span> / 151</p>
+				<p class="credit">Data - <a href="">PokeAPI</a></p>
+			</footer>
 		</main>
 
 

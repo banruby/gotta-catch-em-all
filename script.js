@@ -1,47 +1,115 @@
-
 // the array that holds all the value input by the user
 const pokedex = {
 	data: []
 }
+let counter = 0; //counts successful inputs
+
+const $inputReset = () => {
+	$("#userGuess").val("");
+}
+$(function(){ //doc ready
+
+	//changes overlay colour based on hover
+	$("li.bulbasaur").hover(function() {
+		$(".overlay-top").css("background-color", "#73ac31")
+	})
+
+	$("li.charmander").hover(function() {
+		$(".overlay-top").css("background-color", "#ff9441")
+	})
+
+	$("li.pikachu").hover(function() {
+		$(".overlay-top").css("background-color", "#f6e652")
+	})
+
+	$("li.squirtle").hover(function() {
+		$(".overlay-top").css("background-color", "#5a9ca4")
+	})
+
+	//fades out overlays on click
+	$(".choose li").click(function(){
+		$(".pokeball-centre").delay(1000).fadeOut(2000, function(){
+		})
+		$(".overlay-top").fadeOut(2000, function(){
+		})
+		$(".overlay-bottom").fadeOut(2000, function(){
+		})
+	})
+
+	$("li.bulbasaur").click(function(){
+		$("body").addClass("bulbasaur-1")
+		$("header").addClass("bulbasaur-2")
+		$("footer").addClass("bulbasaur-2")
+		$("header h1").addClass("bulbasaur-3")
+		$("footer p").addClass("bulbasaur-3")
+		$("form").addClass("bulbasaur-4")
+		getData("bulbasaur");
+	})
+
+	$("li.squirtle").click(function(){
+		$("body").addClass("squirtle-1")
+		$("header").addClass("squirtle-2")
+		$("footer").addClass("squirtle-2")
+		$("header h1").addClass("squirtle-3")
+		$("footer p").addClass("squirtle-3")
+		$("form").addClass("squirtle-4")
+		getData("squirtle");
+	})
+
+	$("li.pikachu").click(function(){
+		$("body").addClass("pikachu-1")
+		$("header").addClass("pikachu-2")
+		$("footer").addClass("pikachu-2")
+		$("header h1").addClass("pikachu-3")
+		$("footer p").addClass("pikachu-3")
+		$("form").addClass("pikachu-4")
+		getData("pikachu");
+	})
+
+	$("li.charmander").click(function(){
+		$("body").addClass("charmander-1")
+		$("header").addClass("charmander-2")
+		$("footer").addClass("charmander-2")
+		$("header h1").addClass("charmander-3")
+		$("footer p").addClass("charmander-3")
+		$("form").addClass("charmander-4")
+		getData("charmander");
+	})
 
 // the function that gets data for each input from the API
-const getData = (inputPokemonFormatted) => {
-	let pokePromise = $.ajax({
-		url : `https://pokeapi.co/api/v2/pokemon/${inputPokemonFormatted}/`,
-		dataType : 'json',
-		method: 'GET'
-	}).then(function(data){
-		// console.log(data.id);
-		// console.log(data.name);
-		// console.log(data.types[0].type.name);
-		// console.log(data.weight);
-		let pokeData = data;
-		pokedex.data.push(pokeData.name);
-		addImage(pokeData);
-		console.log(pokeData);			
-	});
-}
+	const getData = (inputPokemonFormatted) => {
+		let pokePromise = $.ajax({
+			url : `https://pokeapi.co/api/v2/pokemon/${inputPokemonFormatted}/`,
+			dataType : 'json',
+			method: 'GET'
+		}).then(function(data){
+			let pokeData = data;
+			pokedex.data.push(pokeData.name);
+			if (pokeData.id <= 151) {
+			$addImage(pokeData);
+			$inputReset();
+			}		
+		});
+	}
 
-// let lettersOnly = () => {
-
-// }
+	const counterUp = (increase) => {
+		counter = counter + increase;
+	}
 
 
-
-let counter = 0;
-
-
-const addImage = (pokeData) => {
-	$(".pokemon-gallery").prepend(`
-		<div class="pokemon-container">
-			<img class="pokeImage" src="${pokeData.sprites.front_default}">
-			<div class="pokeTextContainer">
-				<p class="pokeNumber">${pokeData.id}</p>
-				<p class="pokeName">${pokeData.name}</p>
-			</div>
-		</div>`
-	);
-}
+	const $addImage = (pokeData) => {
+		$(".pokemon-gallery").prepend(`
+			<div class="pokemon-container">
+				<img class="pokeImage" src="${pokeData.sprites.front_default}">
+				<div class="pokeTextContainer">
+					<p class="pokeNumber">${pokeData.id}</p>
+					<p class="pokeName">${pokeData.name}</p>
+				</div>
+			</div>`
+		);
+		counterUp(1);
+		$("span.totalGuessed").replaceWith(`<span class="totalGuessed">${counter}</span>`)
+	}
 
 //NEEDS DOC READY
 // on click submits pokemon name for the user
@@ -49,19 +117,12 @@ $("#pokeSubmit").submit(function(e){
 	e.preventDefault();
 	let inputPokemon = $("input[name=userGuess]").val();
 	let inputPokemonFormatted = inputPokemon.toLowerCase();
-
 	let myRegEx = /[0-9]/
 	let stringTest = myRegEx.test(inputPokemonFormatted);
-	console.log(inputPokemon);
-	if (inputPokemon == "") {
-	} else if (!pokedex.data.includes(inputPokemonFormatted) && !stringTest){
+	if (!pokedex.data.includes(inputPokemonFormatted) && !stringTest){
 		getData(inputPokemonFormatted);
-		counter = counter + 1;
-		$("span.totalGuessed").replaceWith(`<span class="totalGuessed">${counter}</span>`)
 	}
-		
 })
 
-
-	//NEEDS AN IF STATEMENT TO RUN ONLY IF THERE ISN'T AN ERROR
+}) // ends doc ready
 
