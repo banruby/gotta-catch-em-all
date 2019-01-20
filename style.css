@@ -47,8 +47,8 @@ a {
 	height: 300px;
 	margin: 0 auto;
 	position: absolute;
-	right: calc(50vw - 150px);
-	top: calc(50vh - 150px);
+	right: calc(50% - 150px);
+	top: calc(50% - 150px);
 	z-index: 20;
 }
 
@@ -456,8 +456,8 @@ p.footer-right {
 	.pokeball-centre {
 		width: 150px;
 		height: 150px;
-		right: calc(50vw - 75px);
-		top: calc(50vh - 75px);
+		right: calc(50% - 75px);
+		top: calc(50% - 75px);
 	}
 	.choose li {
 		width: 70px;
