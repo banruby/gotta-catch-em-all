@@ -248,6 +248,13 @@ footer p {
 
 p.credit {
 	font-size: 8px;
+	text-align: left;
+	padding-left: 5px;
+}
+
+p.footer-right {
+	text-align: right;
+	padding-right: 5px;
 }
 
 
@@ -334,5 +341,136 @@ p.credit {
 }
 
 
+/* <---- MEDIA QUERIES ----> */
 
 
+@media only screen and (max-width: 1000px) {
+	.wrapper {
+		width: 90%;
+	}
+
+	.pokemon-container {
+		width: calc(25% - 16px);
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	footer {
+		font-size: 20px;
+	}
+
+	.pokemon-container {
+		width: calc(33% - 16px);
+	}
+
+	.pokeNumber {
+		width: 30%;
+		font-size: 14px;
+	}
+
+	.pokeName {
+		width: 70%;
+		font-size: 14px;
+	}
+
+	p.credit {
+		font-size: 5px;
+	}
+
+	.overlay-top h1 {
+		padding-top: 50px;
+		font-size: 60px;
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	header h1 {
+		font-size: 25px;
+	}
+	.pokemon-container {
+		width: calc(33% - 8px);
+		margin: 4px;
+	}
+	.overlay-top h1 {
+		padding: 50px 10px 0 10px;
+		font-size: 40px;
+	}
+}
+
+@media only screen and (max-width: 525px) {
+	.wrapper {
+		width: 75%;
+	}
+	
+	.pokemon-container {
+		width: calc(50% - 10px);
+		margin: 5px;
+	}
+
+	form {
+		width: 300px;
+		height: 70px;
+	}
+
+	#userGuess {
+		width: 235px;
+		height: auto;
+	}
+
+	#userSubmit {
+		width: 60px;
+		height: 60px;
+	}
+}
+
+@media only screen and (max-width: 430px) {
+	.overlay-top h1 {
+		padding-top: 25px;
+	}
+
+	.wrapper {
+		width: 90%;
+	}
+
+	footer {
+		font-size: 15px;
+	}
+	header h1 {
+		margin: 20px 0 10px 0;
+		font-size: 30px;
+	}
+	header {
+		padding-bottom: 10px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.overlay-top h1 {
+		font-size: 30px;
+	}
+
+	h3 {
+		padding-top: 100px;
+	}
+
+	.pokeball-centre {
+		width: 150px;
+		height: 150px;
+		right: calc(50vw - 75px);
+		top: calc(50vh - 75px);
+	}
+	.choose li {
+		width: 70px;
+		height: 70px;
+	}
+	li img {
+		width: 63px;
+		margin: 0;
+	}
+
+	ul.choose {
+		width: 150px;
+		height: 150px;
+		display: inline-block;
+	}
+}
