@@ -399,7 +399,7 @@ p.footer-right {
 
 @media only screen and (max-width: 525px) {
 	.wrapper {
-		width: 75%;
+		width: 85%;
 	}
 	
 	.pokemon-container {
@@ -424,6 +424,9 @@ p.footer-right {
 }
 
 @media only screen and (max-width: 430px) {
+	.wrapper {
+		width: 100%;
+	}
 	.overlay-top h1 {
 		padding-top: 25px;
 	}
