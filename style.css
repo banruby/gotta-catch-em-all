@@ -445,6 +445,10 @@ p.footer-right {
 }
 
 @media only screen and (max-width: 400px) {
+	.wrapper {
+		width: 100%;
+	}
+
 	.overlay-top h1 {
 		font-size: 30px;
 	}
